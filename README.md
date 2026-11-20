@@ -32,6 +32,22 @@ While presenting, long lines wrap instead of showing a horizontal scrollbar. To 
 
 Presenting temporarily changes some editor settings (font size, word wrap, highlights, scrolling). Your own values come back when you stop, or the next time VS Code starts if it was closed mid-presentation. If they ever get stuck, run **Code Expo: Reset Editor Settings** to put those settings back to VS Code's defaults.
 
+## Release notes
+
+### 0.0.2
+
+- Stopping a presentation now restores your original font size and the other editor settings, even after changing the size with **Aa** during the presentation.
+- If VS Code is closed mid-presentation, your settings come back the next time it starts.
+- New stop button in the editor title bar, next to **Aa**.
+- New command **Code Expo: Reset Editor Settings**, to clear settings left behind by 0.0.1.
+- Explanations support Markdown.
+
+**Upgrading from 0.0.1:** run **Code Expo: Reset Editor Settings** once. 0.0.1 could keep presentation values (such as a large font size) as your normal settings. The reset puts them back to VS Code's defaults, so set your preferred font size again afterwards if you had one.
+
+### 0.0.1
+
+- First release: record steps from selections, present them with Enter, arrow keys or a clicker, enlarged and animated highlight with faded surrounding code, font size picker.
+
 ## Limitations
 
 - Steps store line and column numbers, so editing the code after recording shifts the highlights.

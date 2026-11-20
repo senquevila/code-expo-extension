@@ -2,11 +2,12 @@
   "name": "code-expo",
   "displayName": "Code Expo",
   "description": "Present code step by step: highlight a region and show its explanation.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "senquevila",
   "icon": "icon.png",
   "engines": { "vscode": "^1.85.0" },
   "main": "./extension.js",
+  "files": ["extension.js", "icon.png", "images/demo.gif"],
   "activationEvents": ["onStartupFinished"],
   "contributes": {
     "commands": [
