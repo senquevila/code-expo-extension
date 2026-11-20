@@ -1,0 +1,39 @@
+{
+  "name": "code-expo",
+  "displayName": "Code Expo",
+  "description": "Present code step by step: highlight a region and show its explanation.",
+  "version": "0.0.1",
+  "publisher": "senquevila",
+  "icon": "icon.png",
+  "engines": { "vscode": "^1.85.0" },
+  "main": "./extension.js",
+  "activationEvents": ["onStartupFinished"],
+  "contributes": {
+    "commands": [
+      { "command": "codeExpo.addStep", "title": "Add Step from Selection", "category": "Code Expo" },
+      { "command": "codeExpo.start", "title": "Start Presentation", "category": "Code Expo" },
+      { "command": "codeExpo.next", "title": "Next Step", "category": "Code Expo" },
+      { "command": "codeExpo.prev", "title": "Previous Step", "category": "Code Expo" },
+      { "command": "codeExpo.stop", "title": "Stop Presentation", "category": "Code Expo", "icon": "$(debug-stop)" },
+      { "command": "codeExpo.changeFontSize", "title": "Change Font Size", "category": "Code Expo", "icon": "$(text-size)" },
+      { "command": "codeExpo.resetSettings", "title": "Reset Editor Settings", "category": "Code Expo" }
+    ],
+    "menus": {
+      "editor/context": [
+        { "command": "codeExpo.addStep", "when": "editorHasSelection", "group": "codeExpo" }
+      ],
+      "editor/title": [
+        { "command": "codeExpo.changeFontSize", "when": "codeExpo.active", "group": "navigation@1" },
+        { "command": "codeExpo.stop", "when": "codeExpo.active", "group": "navigation@2" }
+      ]
+    },
+    "keybindings": [
+      { "command": "codeExpo.next", "key": "enter", "when": "codeExpo.active && (editorTextFocus || activeWebviewPanelId == 'codeExpo')" },
+      { "command": "codeExpo.next", "key": "right", "when": "codeExpo.active && (editorTextFocus || activeWebviewPanelId == 'codeExpo')" },
+      { "command": "codeExpo.next", "key": "pagedown", "when": "codeExpo.active && (editorTextFocus || activeWebviewPanelId == 'codeExpo')" },
+      { "command": "codeExpo.prev", "key": "left", "when": "codeExpo.active && (editorTextFocus || activeWebviewPanelId == 'codeExpo')" },
+      { "command": "codeExpo.prev", "key": "pageup", "when": "codeExpo.active && (editorTextFocus || activeWebviewPanelId == 'codeExpo')" },
+      { "command": "codeExpo.stop", "key": "escape", "when": "codeExpo.active && (editorTextFocus || activeWebviewPanelId == 'codeExpo')" }
+    ]
+  }
+}
