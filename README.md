@@ -34,6 +34,10 @@ Presenting temporarily changes some editor settings (font size, word wrap, highl
 
 ## Release notes
 
+### 0.0.3
+
+- Fixed the demo GIF not showing on the Marketplace page.
+
 ### 0.0.2
 
 - Stopping a presentation now restores your original font size and the other editor settings, even after changing the size with **Aa** during the presentation.
